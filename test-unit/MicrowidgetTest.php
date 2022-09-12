@@ -13,15 +13,12 @@ class MicrowidgetTest extends TestCase
             '<span id="raw">aboba</span>',
             '<span id="tagless">bobaka</span>',
             '<span id="screened">kakobar</span>'
-        ))->run();
+        ))->print();
         $expected = <<<HEREDOC
 <h1><span id="raw">aboba</span></h1>
 <p>bobaka</p>
 <div>
     &lt;span id=&quot;screened&quot;&gt;kakobar&lt;/span&gt;</div>
-<script>
-    let a = 2;
-</script>
 HEREDOC;
 
         $this->assertEquals($expected, $result);

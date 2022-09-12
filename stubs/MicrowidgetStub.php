@@ -31,13 +31,4 @@ class MicrowidgetStub extends Microwidget
             <?= $this->screenTags($this->screenContent) ?></div>
         <?php
     }
-
-    protected function script(): void
-    {
-        ?>
-            <script>
-                let a = 2;
-            </script>
-<?php
-    }
 }
