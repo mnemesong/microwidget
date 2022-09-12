@@ -34,5 +34,10 @@ class MicrowidgetStub extends Microwidget
 
     protected function script(): void
     {
+        ?>
+            <script>
+                let a = 2;
+            </script>
+<?php
     }
 }

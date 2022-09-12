@@ -19,6 +19,9 @@ class MicrowidgetTest extends TestCase
 <p>bobaka</p>
 <div>
     &lt;span id=&quot;screened&quot;&gt;kakobar&lt;/span&gt;</div>
+<script>
+    let a = 2;
+</script>
 HEREDOC;
 
         $this->assertEquals($expected, $result);

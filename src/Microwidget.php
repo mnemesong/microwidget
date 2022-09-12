@@ -21,18 +21,25 @@ abstract class Microwidget
      */
     public function run(): string
     {
-        return $this->printScript();
+        $s = $this->printScript();
+        return $this->printTemplate() . (!empty($s) ? ("\r\n" . $s) : '');
     }
 
-    protected function printScript(): string
+    /**
+     * @return string
+     */
+    public function printScript(): string
     {
         ob_start();
-        $this->template();
+        $this->script();
         $content = ob_get_clean();
         return PrevTabsClearHelpers::clear($content);
     }
 
-    protected function printTemplate(): string
+    /**
+     * @return string
+     */
+    public function printTemplate(): string
     {
         ob_start();
         $this->template();
