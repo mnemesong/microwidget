@@ -19,6 +19,7 @@ class PrevTabsClearHelpers
             }
             return mb_strlen($str) - mb_strlen($matches[0]);
         }, $stringsArr));
+        $minSpaces = intval($minSpaces);
         //Remove minimal count of first spacebars from every string
         $stringsArr = array_map(function (string $str) use ($minSpaces) {
             return mb_substr($str, $minSpaces);

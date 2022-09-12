@@ -19,6 +19,7 @@ abstract class Microwidget
         ob_start();
         $this->template();
         $content = ob_get_clean();
+        $content = ($content === false) ? "" : $content;
         return PrevTabsClearHelpers::clear($content);
     }
 
