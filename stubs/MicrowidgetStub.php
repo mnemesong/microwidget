@@ -11,16 +11,36 @@ class MicrowidgetStub extends Microwidget
 
     /**
      * @param string $rawContent
-     * @param string $taglessContent
-     * @param string $screenContent
+     * @return MicrowidgetStub
      */
-    public function __construct(string $rawContent, string $taglessContent, string $screenContent)
+    public function withRawContent(string $rawContent): self
     {
-        $this->rawContent = $rawContent;
-        $this->taglessContent = $taglessContent;
-        $this->screenContent = $screenContent;
+        $clone = clone $this;
+        $clone->rawContent = $rawContent;
+        return $clone;
     }
 
+    /**
+     * @param string $taglessContent
+     * @return MicrowidgetStub
+     */
+    public function withTaglessContent(string $taglessContent): self
+    {
+        $clone = clone $this;
+        $clone->taglessContent = $taglessContent;
+        return $clone;
+    }
+
+    /**
+     * @param string $screenContent
+     * @return MicrowidgetStub
+     */
+    public function withScreenContent(string $screenContent): self
+    {
+        $clone = clone $this;
+        $clone->screenContent = $screenContent;
+        return $clone;
+    }
 
     protected function template(): void
     {

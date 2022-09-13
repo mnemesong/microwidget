@@ -9,11 +9,11 @@ class MicrowidgetTest extends TestCase
 {
     public function testPrint(): void
     {
-        $result = (new MicrowidgetStub(
-            '<span id="raw">aboba</span>',
-            '<span id="tagless">bobaka</span>',
-            '<span id="screened">kakobar</span>'
-        ))->print();
+        $result = MicrowidgetStub::create()
+            ->withRawContent('<span id="raw">aboba</span>')
+            ->withScreenContent('<span id="screened">kakobar</span>')
+            ->withTaglessContent('<span id="tagless">bobaka</span>')
+            ->print();
         $expected = <<<HEREDOC
 <h1><span id="raw">aboba</span></h1>
 <p>bobaka</p>

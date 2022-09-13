@@ -41,4 +41,12 @@ abstract class Microwidget
         return htmlspecialchars($text);
     }
 
+    /**
+     * @return static
+     */
+    public static function create(): self
+    {
+        return new static();
+    }
+
 }
