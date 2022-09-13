@@ -6,6 +6,8 @@ use Mnemesong\Microwidget\helpers\PrevTabsClearHelpers;
 
 abstract class Microwidget
 {
+    final public function __construct() {}
+
     /**
      * @return void
      */
