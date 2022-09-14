@@ -3,6 +3,7 @@
 namespace Mnemesong\MicrowidgetTestUnit;
 
 use Mnemesong\MicrowidgetStubs\MicrowidgetStub;
+use Mnemesong\MicrowidgetStubs\MicrowidgetStub2;
 use PHPUnit\Framework\TestCase;
 
 class MicrowidgetTest extends TestCase
@@ -22,6 +23,13 @@ class MicrowidgetTest extends TestCase
 HEREDOC;
 
         $this->assertEquals($expected, $result);
+    }
+
+    public function testEmptyWidget(): void
+    {
+        $result = MicrowidgetStub2::create()
+            ->print();
+        $this->assertEquals('', $result);
     }
 
 }

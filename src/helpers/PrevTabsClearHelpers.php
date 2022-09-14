@@ -11,14 +11,15 @@ class PrevTabsClearHelpers
         $stringsArr = array_filter($stringsArr, fn(string $str)
         => (preg_match('/^[\s]*$/', $str) !== 1));
         //Get minimal count of spacebars at start of every string
-        $minSpaces = min(array_map(function (string $str) {
+        $allSpacesArray = array_map(function (string $str) {
             $matches = [];
             preg_match('/\S\S*.*$/', $str, $matches);
             if(!isset($matches[0])) {
                 return 0;
             }
             return mb_strlen($str) - mb_strlen($matches[0]);
-        }, $stringsArr));
+        }, $stringsArr);
+        $minSpaces = empty($allSpacesArray) ? 0 : min($allSpacesArray);
         $minSpaces = intval($minSpaces);
         //Remove minimal count of first spacebars from every string
         $stringsArr = array_map(function (string $str) use ($minSpaces) {
