@@ -9,17 +9,18 @@ abstract class Microwidget
     final protected function __construct() {}
 
     /**
-     * @return void
-     */
-    abstract protected function template(): void;
-
-    /**
      * @return string
      */
-    public function print(): string
+    abstract public function print(): string;
+
+    /**
+     * @param callable $callback
+     * @return string
+     */
+    protected function render(callable $callback): string
     {
         ob_start();
-        $this->template();
+        $callback();
         $content = ob_get_clean();
         $content = ($content === false) ? "" : $content;
         return PrevTabsClearHelpers::clear($content);

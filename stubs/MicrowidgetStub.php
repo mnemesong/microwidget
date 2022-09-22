@@ -42,13 +42,18 @@ class MicrowidgetStub extends Microwidget
         return $clone;
     }
 
-    protected function template(): void
+    /**
+     * @return string
+     */
+    public function print(): string
     {
-        ?>
-        <h1><?= $this->rawContent ?></h1>
-        <p><?= $this->clearTags($this->taglessContent) ?></p>
-        <div>
-            <?= $this->screenTags($this->screenContent) ?></div>
-        <?php
+        return $this->render(function () {
+            ?>
+                <h1><?= $this->rawContent ?></h1>
+                <p><?= $this->clearTags($this->taglessContent) ?></p>
+                <div>
+                    <?= $this->screenTags($this->screenContent) ?></div>
+            <?php
+        });
     }
 }

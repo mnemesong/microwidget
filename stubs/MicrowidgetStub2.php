@@ -6,11 +6,12 @@ use Mnemesong\Microwidget\Microwidget;
 
 class MicrowidgetStub2 extends Microwidget
 {
-
-    protected function template(): void
+    public function print(): string
     {
-        ?>
+        return $this->render(function () {
+            ?>
 
-        <?php
+            <?php
+        });
     }
 }
