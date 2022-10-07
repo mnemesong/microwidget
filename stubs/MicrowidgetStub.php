@@ -47,7 +47,7 @@ class MicrowidgetStub extends Microwidget
      */
     public function print(): string
     {
-        return $this->render(function () {
+        return $this->r(function () {
             ?>
                 <h1><?= $this->rawContent ?></h1>
                 <p><?= $this->clearTags($this->taglessContent) ?></p>

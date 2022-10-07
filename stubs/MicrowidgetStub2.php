@@ -8,7 +8,7 @@ class MicrowidgetStub2 extends Microwidget
 {
     public function print(): string
     {
-        return $this->render(function () {
+        return $this->r(function () {
             ?>
 
             <?php

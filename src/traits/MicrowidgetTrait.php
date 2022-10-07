@@ -10,7 +10,7 @@ trait MicrowidgetTrait
      * @param callable $callback
      * @return string
      */
-    protected function render(callable $callback): string
+    protected function r(callable $callback): string
     {
         ob_start();
         $callback();

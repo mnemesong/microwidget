@@ -15,6 +15,15 @@ abstract class Microwidget
      */
     abstract public function print(): string;
 
+    /**
+     * @param callable $callback
+     * @return string
+     */
+    protected function render(callable $callback): string
+    {
+        return $this->r($callback);
+    }
+
 
     /**
      * @return static
